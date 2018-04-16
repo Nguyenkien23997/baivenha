@@ -13,14 +13,16 @@ public class window extends JFrame {
     public void setupGame() {
         this.Game = new game();
         this.add(this.Game);
-
     }
 
-    public void gameLoop(){
-        while(true){
+    public void gameLoop() {
+        while (true) {
             long currentTime = System.nanoTime();
-            if(currentTime - lastTime >= 17_000_000){
+            if (currentTime - lastTime >= 17_000_000) {
                 this.Game.renderAll();
+                this.Game.runAll();
+                this.Game.repaint();
+
             }
         }
     }
